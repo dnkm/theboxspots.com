@@ -23,3 +23,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+button {
+  font-family: 'SUIT', 'sans-serif';
+  cursor: pointer;
+}
+
+input {
+  font-family: 'SUIT', 'sans-serif';
+  border: none;
+  outline: none;
+  min-width: none;
+}
