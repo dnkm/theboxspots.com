@@ -3,7 +3,7 @@ import { withAuthUserTokenSSR, withAuthUser, AuthAction } from 'next-firebase-au
 function Login() {
     return (
         <div>
-            hello world
+
         </div>
     );
 }
