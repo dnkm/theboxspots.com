@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import '../styles/globals.css'
+import '../styles/globals.css';
+import initAuth from '../lib/initAuth';
 
-function MyApp({ Component, pageProps: { session, ...pageProps } }) {
+initAuth();
+
+export default function MyApp({ Component, pageProps: { session, ...pageProps } }) {
     return (
         <>
             <Head>
@@ -12,5 +15,3 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
         </>
     );
 }
-
-export default MyApp
