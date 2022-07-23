@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useCallback, useEffect, useState, useRef } from 'react';
 import styles from '../styles/Home.module.scss';
 
@@ -12,23 +13,25 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
-        setY(page.current.scrollTop);
-        page.current.addEventListener("scroll", onScroll);
+        let pc = page.current;
 
-        return () => page.current.removeEventListener("scroll", onScroll);
+        setY(pc.scrollTop);
+        pc.addEventListener("scroll", onScroll);
+
+        return () => pc.removeEventListener("scroll", onScroll);
     }, [onScroll]);
 
     return (
         <div ref={page} className={styles.page}>
-            <nav className={`${styles.nav} ${y === 0 ? styles.hidden : undefined}`}>
+            <nav className={`${styles.nav} ${y > 0 ? styles.visible : undefined}`}>
                 <div>
                     <Image src="/logo1.png" alt="" width={60} height={60} />
                     <h1>Box Spots</h1>
                 </div>
 
                 <div>
-                    <p style={{ marginRight: 25 }}>Download App</p>
-                    <p>Console</p>
+                    <Link href="/download"><a style={{ marginRight: 25 }}>Download App</a></Link>
+                    <Link href="/app"><a>Console</a></Link>
                 </div>
             </nav>
 
@@ -36,8 +39,8 @@ export default function Home() {
                 <h1>Explore with Pattern</h1>
                 <p>For museums, amusement parks, edifices, conferences, markets, special events, and more!</p>
                 <div>
-                    <button style={{ marginRight: 25 }}>Tourists</button>
-                    <button>Businesses</button>
+                    <Link href="/download"><a style={{ marginRight: 25 }}>Tourists</a></Link>
+                    <Link href="/app"><a>Businesses</a></Link>
                 </div>
             </div>
 

@@ -1,4 +1,4 @@
-@use 'variables.module.scss'as vars;
+@use 'variables.module.scss' as vars;
 
 .page {
     height: 100vh;
@@ -13,13 +13,12 @@
 
 .nav {
     position: fixed;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     width: 100vw;
     height: 60px;
     transition: 0.2s;
-    color: vars.$primary-color;
-    box-shadow: 0 1px 5px gray;
+    color: white;
     justify-content: space-around;
 
     img {
@@ -31,10 +30,16 @@
         align-items: center;
     }
 
-    &.hidden {
-        background-color: transparent;
-        box-shadow: none;
-        color: white;
+    a:hover {
+        color: vars.$sub-color;
+        transition: 0.2s;
+    }
+
+    &.visible,
+    &:hover {
+        background-color: white;
+        box-shadow: 0 1px 5px gray;
+        color: vars.$primary-color;
     }
 }
 
@@ -43,7 +48,7 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #8CD8F4, #73C3E0);
+    background: linear-gradient(45deg, vars.$sub-color, vars.$primary-color);
     color: white;
     flex-direction: column;
 
@@ -63,11 +68,12 @@
         display: flex;
     }
 
-    button {
+    a {
+        text-align: center;
         padding: 15px 0;
         border: none;
         background: white;
-        color: #73C3E0;
+        color: vars.$primary-color;
         font-family: 'SUIT', 'sans-serif';
         font-size: 35px;
         width: 250px;
@@ -76,7 +82,7 @@
         transition: 0.2s;
 
         &:hover {
-            color: #8CD8F4;
+            color: vars.$sub-color;
         }
     }
 }
@@ -101,7 +107,7 @@
     align-items: center;
     padding: 200px 500px;
     text-align: center;
-    background: linear-gradient(45deg, #8CD8F4, #73C3E0);
+    background: linear-gradient(45deg, vars.$sub-color, vars.$primary-color);
     color: white;
 
     a {
