@@ -46,7 +46,7 @@ function Login() {
             <div className={styles.signup}>
                 <h1>First Time Here?</h1>
                 <p>Create your organization account to start setting up spots!</p>
-                <button>Sign Up</button>
+                <Link href="/signup"><a>Sign Up</a></Link>
             </div>
         </div >
     );
