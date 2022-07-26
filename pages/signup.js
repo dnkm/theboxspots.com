@@ -26,32 +26,29 @@ function SignUp() {
 
     return (
         <div className={styles.page}>
+            <div />
+
             <form className={styles.form} onSubmit={submitForm}>
                 <h1>Create an Organization</h1>
                 <p>Design your journey with Box Spots</p>
 
                 <h3>{error}</h3>
 
-                <div>
-                    <label>Email</label>
-                    <input id="email" autoCapitalize='none' autoCorrect='none' />
-                </div>
+                <div />
 
-                <div>
-                    <label>Password</label>
-                    <input id="password" autoCapitalize='none' autoCorrect='none' type="password" />
-                </div>
+                <input id="email" placeholder='Email' autoCapitalize='none' autoCorrect='none' />
 
-                <div>
-                    <label>Retype Password</label>
-                    <input id="rpassword" autoCapitalize='none' autoCorrect='none' type="password" />
-                </div>
+                <input id="password" placeholder='Password' autoCapitalize='none' autoCorrect='none' type="password" />
 
-                <button>Sign Up</button>
+                <input id="rpassword" placeholder='Retype Password' autoCapitalize='none' autoCorrect='none' type="password" />
+            </form >
 
-                <Link href="/login"><a>Already have an account?</a></Link>
-            </form>
-        </div>
+            <div className={styles.next}>
+                <button>
+                    <i />
+                </button>
+            </div>
+        </div >
     );
 }
 

@@ -1,21 +1,19 @@
 @use 'variables.module.scss' as vars;
 
 .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    background-color: #eceef1;
+    background: linear-gradient(80deg, #8CD8F4, #738DE0);
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
 }
 
 .form {
-    background-color: white;
-    box-shadow: 0 2px 5px gray;
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white;
 
     h1 {
         font-size: 50px;
@@ -25,7 +23,6 @@
 
     p {
         font-size: 20px;
-        color: gray;
         text-align: center;
         margin-bottom: 20px;
     }
@@ -38,44 +35,37 @@
     }
 
     div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-
-        input {
-            box-shadow: 0 1px 5px rgb(172, 172, 172);
-            font-size: 15px;
-            padding: 10px;
-            margin-top: 10px;
-            transition: 0.1s;
-
-            &:focus {
-                box-shadow: 0 1px 5px vars.$primary-color;
-            }
-        }
+        width: 20%;
+        height: 1px;
+        background-color: white;
     }
+
+    input {
+        font-size: 15px;
+        margin-top: 40px;
+        width: 30%;
+        background-color: white;
+        padding: 20px;
+        border-radius: 40px;
+    }
+}
+
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     button {
-        margin-top: 20px;
-        font-size: 15px;
-        border: 1px solid vars.$sub-color;
-        background-color: white;
-        color: vars.$sub-color;
-        padding: 20px 0px;
-        width: 40%;
-        border-radius: 40px;
-        font-weight: bold;
-        transition: 0.2s;
-
-        &:hover {
-            background-color: vars.$sub-color;
-            color: white;
-        }
+        background-color: transparent;
+        border: none;
     }
 
-    a {
-        margin-top: 20px;
-        color: gray;
+    i {
+        border: solid white;
+        border-width: 0 12px 12px 0;
+        display: inline-block;
+        padding: 12px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
 }
