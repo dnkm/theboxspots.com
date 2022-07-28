@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "firebase": "^9.9.1",
     "next": "12.2.3",
     "next-firebase-auth": "^0.14.4-alpha.0",
     "pg": "^8.7.3",
